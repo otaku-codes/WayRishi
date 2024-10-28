@@ -24,8 +24,6 @@ const Booking = ({ tour, avgRating }) => {
   const serviceFee = 10
   const totalAmount = Number(price) * Number(credentails.guestSize) + Number(serviceFee)
   
-  
-
   const handleClick = e => {
     e.preventDefault()
     console.log(credentails);
