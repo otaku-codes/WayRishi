@@ -5,7 +5,6 @@ const tourSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      // removed unique constraint for flexibility
     },
     city: {
       type: String,
@@ -35,9 +34,12 @@ const tourSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    reviews: {
-      type: [String], // Changed to an array of strings to match the provided JSON structure
-    },
+    reviews: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Review", 
+      },
+    ],
     featured: {
       type: Boolean,
       default: false,
