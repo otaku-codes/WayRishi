@@ -36,11 +36,11 @@ export const login = async (req, res) => {
     res
       .cookie("accessToken", token, {
         httpOnly: true,
-        maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days in milliseconds
+        maxAge: 15 * 24 * 60 * 60 * 1000,
       })
       .status(200)
       .json({
-        success: true, // Added success flag to response
+        success: true,
         token,
         data: { ...rest },
         role,

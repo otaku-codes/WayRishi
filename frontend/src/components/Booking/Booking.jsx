@@ -27,7 +27,7 @@ const Booking = ({ tour, avgRating }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(credentails);
+
 
     navigate("/thank-you");
   };

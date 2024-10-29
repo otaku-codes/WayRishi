@@ -124,7 +124,7 @@ export const getTourBySearch = async (req, res) => {
       maxGroupSize: { $gte: maxGroupSize },
     }).populate("reviews");
 
-    console.log("Tours found:", tours.length);
+ 
 
     res.status(200).json({
       success: true,

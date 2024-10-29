@@ -12,12 +12,14 @@ import bookingRoute from "./routes/bookings.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
+
+// CORS options
 const corsOptions = {
-  origin: true,
-  credential: true,
+  origin: "http://localhost:3000", // Update to your frontend URL
+  credentials: true, // Allow credentials
 };
 
-//database connection
+// Database connection
 mongoose.set("strictQuery", false);
 const connect = async () => {
   try {
@@ -25,27 +27,30 @@ const connect = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("Mongo connected");
+    console.log("MongoDB connected");
   } catch (err) {
     console.error("Error connecting to MongoDB:", err);
   }
 };
 
-//for testing
+// For testing
 app.get("/", (req, res) => {
   res.send("API is working");
 });
 
-//middleware
+// Middleware
+app.use(cors(corsOptions)); // Use CORS with the defined options
 app.use(express.json());
-app.use(cors(corsOptions));
 app.use(cookieParser());
+
+// Define routes
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/tours", tourRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/review", reviewRoute);
 app.use("/api/v1/booking", bookingRoute);
 
+// Start the server
 app.listen(port, () => {
   connect();
   console.log("Server listening on port", port);

@@ -113,7 +113,6 @@ export const getUserBySearch = async (req, res) => {
       maxGroupSize: { $gte: maxGroupSize },
     });
 
-    console.log("Users found:", Users.length);
 
     res.status(200).json({
       success: true,
