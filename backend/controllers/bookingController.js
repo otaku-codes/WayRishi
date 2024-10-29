@@ -1,12 +1,11 @@
 import Bookings from "../models/Bookings.js";
-import nodemailer from "nodemailer"; // Import Nodemailer
+import nodemailer from "nodemailer";
 
-// Create a transporter for Gmail
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "himanshupapola.ph@gmail.com", // Your Gmail address
-    pass: "guydhyoufbvcocck", // Your App Password
+    user: "himanshupapola.ph@gmail.com",
+    pass: "guydhyoufbvcocck",
   },
 });
 
@@ -14,16 +13,14 @@ export const createBooking = async (req, res) => {
   const newBooking = new Bookings(req.body);
   try {
     const savedBooking = await newBooking.save();
-    console.log(savedBooking);
 
     const objectId = savedBooking._id;
     const id = objectId.toString();
     // Define email parameters
     const mailOptions = {
-      from: "himanshupapola.ph@gmail.com", // Sender address
-      to: "realtrickswizard@gmail.com", // Change to the recipient's email
+      from: "himanshupapola.ph@gmail.com",
+      to: `realtrickswizard@gmail.com, ${savedBooking.userEmail}`,
       subject: "WAYRISHI | Booking Confirmation",
-      // Use the new HTML format for the email
       html: `<!DOCTYPE html>
 
 <html
@@ -544,9 +541,7 @@ export const createBooking = async (req, res) => {
                                     "
                                   >
                                     <p style="margin: 0">
-                                      #${id}<br />Date: ${new Date(
-        savedBooking.bookAt
-      ).toLocaleDateString()}
+                                      #${id}<br />Date: ${new Date().toLocaleDateString()}
                                     </p>
                                   </div>
                                 </td>
@@ -762,7 +757,7 @@ export const createBooking = async (req, res) => {
                                     <p style="margin: 0">
                                       <p>We’re excited to let you know that your tour has been successfully booked! Get ready for an amazing experience, and please don’t hesitate to reach out if you have any questions or special requests.</p>
 
-                                    <p>Thank you for choosing WayRishi. We look forward to making your journey unforgettable!</p>
+                                    <p>Thank you for choosing WayRishi. For furthure details your selected Guide will shortly contact you. We look forward to making your journey unforgettable!</p>
 
                                     <p>Best regards,<br />
                                     WayRishi Team</p>
