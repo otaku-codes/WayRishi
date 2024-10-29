@@ -62,15 +62,42 @@
 }
 
 .login__form p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #fff;
   margin-top: 1.5rem;
   text-align: center;
 }
 
-.login__form p a{
+.login__form p a {
   color: var(--heading-color);
   text-decoration: none;
   margin-left: 5px;
   font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+  .login__img {
+    display: none;
+  }
+
+  .login__form {
+    width: 70%;
+    margin: auto;
+  }
+
+  .login_container {
+    padding-bottom: 3rem;
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (max-width:  576px) {
+  .login__form {
+    width: 100%;
+    margin: auto;
+  }
+
+  .login_container {
+    padding-bottom: 1rem;
+  }
 }

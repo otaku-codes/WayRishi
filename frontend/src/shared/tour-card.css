@@ -82,3 +82,21 @@
 .booking_btn a:hover {
   color: #fff;
 }
+
+@media only screen and (max-width: 576px) {
+  .tour__title {
+    font-size: 1rem;
+  }
+
+  .booking_btn a {
+    font-size: 0.8rem;
+  }
+
+  .booking_btn {
+    padding: 0.2rem 0.5rem !important;
+  }
+
+  .tour__location, .tour__rating {
+    font-size: 0.8rem;
+  }
+}
