@@ -1,7 +1,6 @@
-import React, { useId, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./booking.css";
-import { Form, FormGroup, ListGroup, ListGroupItem, Button } from "reactstrap";
-
+import { Form, FormGroup, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { BASE_URL } from "../../utils/config";
@@ -9,11 +8,10 @@ import { BASE_URL } from "../../utils/config";
 const Booking = ({ tour, avgRating }) => {
   const { price, reviews, title } = tour;
   const navigate = useNavigate();
-
   const { user } = useContext(AuthContext);
 
   const [booking, setBooking] = useState({
-    useId: user && user._id,
+    userId: user && user._id,
     userEmail: user && user.email,
     tourName: title,
     fullName: "",
@@ -21,6 +19,8 @@ const Booking = ({ tour, avgRating }) => {
     guestSize: 1,
     bookAt: "",
   });
+
+  const [loading, setLoading] = useState(false); // Step 1: Loading state to manage duplicate requests
 
   const handleChange = (e) => {
     setBooking((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -32,17 +32,21 @@ const Booking = ({ tour, avgRating }) => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    
+    if (loading) return; // Prevent duplicate clicks
+    
+    setLoading(true); // Set loading to true to disable button and prevent further clicks
 
-    console.log(booking);
     try {
-      if (!user || user === undefined || user === null) {
+      if (!user) {
+        setLoading(false);
         return alert("Please sign in");
       }
 
       const res = await fetch(`${BASE_URL}/booking`, {
-        method: "post",
+        method: "POST",
         headers: {
-          "content-type": "application/json",
+          "Content-Type": "application/json",
         },
         credentials: "include",
         body: JSON.stringify(booking),
@@ -51,12 +55,15 @@ const Booking = ({ tour, avgRating }) => {
       const result = await res.json();
 
       if (!res.ok) {
+        setLoading(false);
         return alert(result.message);
       }
 
       navigate("/thank-you");
     } catch (err) {
       alert(err.message);
+    } finally {
+      setLoading(false); // Reset loading state after process completes
     }
   };
 
@@ -72,7 +79,7 @@ const Booking = ({ tour, avgRating }) => {
         </span>
       </div>
 
-      {/* ========Booking from====================== */}
+      {/* ========Booking Form====================== */}
       <div className="booking__form">
         <h5>Information</h5>
         <Form className="booking__info-form" onSubmit={handleClick}>
@@ -112,27 +119,31 @@ const Booking = ({ tour, avgRating }) => {
           </FormGroup>
         </Form>
       </div>
-      {/* ========Booking end====================== */}
+      {/* ========Booking End====================== */}
 
       {/* ========Booking Bottom====================== */}
       <div className="booking__bottom">
-        <ListGroup className="border-0 px-0">
+        <div className="d-flex justify-content-between">
           <h5 className="d-flex align-items-center gap-1">
             ${price} <i className="ri-close-line"></i> 1 person
           </h5>
           <span> ${price}</span>
-        </ListGroup>
-        <ListGroup className="border-0 px-0">
+        </div>
+        <div className="d-flex justify-content-between">
           <h5>Service charge</h5>
           <span> $10</span>
-        </ListGroup>
-        <ListGroup className="border-0 px-0 total">
+        </div>
+        <div className="d-flex justify-content-between total">
           <h5>Total</h5>
           <span> ${totalAmount}</span>
-        </ListGroup>
+        </div>
 
-        <Button className="btn primary__btn w-100 mt-4" onClick={handleClick}>
-          Book Now
+        <Button
+          className="btn primary__btn w-100 mt-4"
+          onClick={handleClick}
+          disabled={loading} // Step 2: Disable button when loading
+        >
+          {loading ? "Processing..." : "Book Now"} {/* Show loading text */}
         </Button>
       </div>
     </div>
