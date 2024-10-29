@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Booking = ({ tour, avgRating }) => {
   const { price, reviews } = tour;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [credentails, setCredentials] = useState({
     useId: "01",
@@ -21,16 +21,16 @@ const Booking = ({ tour, avgRating }) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const serviceFee = 10
-  const totalAmount = Number(price) * Number(credentails.guestSize) + Number(serviceFee)
-  
-  const handleClick = e => {
-    e.preventDefault()
+  const serviceFee = 10;
+  const totalAmount =
+    Number(price) * Number(credentails.guestSize) + Number(serviceFee);
+
+  const handleClick = (e) => {
+    e.preventDefault();
     console.log(credentails);
 
-    navigate("/thank-you")
-  }
-
+    navigate("/thank-you");
+  };
 
   return (
     <div className="booking">
@@ -39,7 +39,7 @@ const Booking = ({ tour, avgRating }) => {
           ${price} <span>/per person</span>
         </h3>
         <span className="tour__rating d-flex align-items-center">
-          <i class="ri-star-s-fill"></i>
+          <i className="ri-star-s-fill"></i>
           {avgRating === 0 ? null : avgRating} ({reviews?.length})
         </span>
       </div>
@@ -90,7 +90,7 @@ const Booking = ({ tour, avgRating }) => {
       <div className="booking__bottom">
         <ListGroup className="border-0 px-0">
           <h5 className="d-flex align-items-center gap-1">
-            ${price} <i class="ri-close-line"></i> 1 person
+            ${price} <i className="ri-close-line"></i> 1 person
           </h5>
           <span> ${price}</span>
         </ListGroup>
@@ -103,7 +103,9 @@ const Booking = ({ tour, avgRating }) => {
           <span> ${totalAmount}</span>
         </ListGroup>
 
-        <Button className="btn primary__btn w-100 mt-4" onClick={handleClick}>Book Now</Button>
+        <Button className="btn primary__btn w-100 mt-4" onClick={handleClick}>
+          Book Now
+        </Button>
       </div>
     </div>
   );

@@ -2,20 +2,24 @@ import { parse } from "dotenv";
 import Tour from "../models/Tour.js";
 
 // create new tour
+
 export const createTour = async (req, res) => {
   const newTour = new Tour(req.body);
 
   try {
     const savedTour = await newTour.save();
-    res.status(200).json({
+    res.status(201).json({
+      // Using 201 for resource creation
       success: true,
       message: "Successfully created",
       data: savedTour,
     });
   } catch (err) {
-    res
-      .status(500)
-      .json({ success: false, message: "Failed to create. Try again" });
+    console.error(err); // Log the error for debugging
+    res.status(500).json({
+      success: false,
+      message: "Failed to create. Try again",
+    });
   }
 };
 
@@ -141,7 +145,9 @@ export const getTourBySearch = async (req, res) => {
 //get featured tour
 export const getFeaturedTour = async (req, res) => {
   try {
-    const tours = await Tour.find({ featured: true }).populate("reviews").limit(8);
+    const tours = await Tour.find({ featured: true })
+      .populate("reviews")
+      .limit(8);
 
     res.status(200).json({
       success: true,
