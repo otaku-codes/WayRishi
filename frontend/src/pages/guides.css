@@ -1,0 +1,54 @@
+.guide-image-container {
+  position: relative; /* Position relative to contain absolutely positioned children */
+  width: 450px; /* Match the image width */
+  height: 300px; /* Match the image height */
+  overflow: hidden; /* Prevent overflow of child elements */
+}
+
+.guide-image {
+  width: 100%; /* Make image responsive within the container */
+  height: 100%; /* Ensure it takes full height of the container */
+  object-fit: cover; /* Ensures the image covers the area */
+  border-radius: 5px; /* Optional: round corners */
+}
+
+.guide-overlay {
+  position: absolute; /* Position overlay on top of image */
+  bottom: 0; /* Position overlay at the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset to center */
+  color: white; /* Change to your preferred text color */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  padding: 5px; /* Padding around text */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  width: calc(100% - 20px); /* Full width minus padding */
+}
+
+.guide-name,
+.guide-speciality {
+  margin: 0; /* Reset margin */
+}
+
+
+/* guides.css */
+
+.guide-wrapper {
+  padding-left: 20px; /* Adjust as necessary for spacing */
+  padding-right: 20px; /* Adjust as necessary for spacing */
+}
+
+/* Optional: If you want more space between the filters and the guides */
+.flex {
+  gap: 20px; /* Adjusts space between filter and guides */
+}
+
+/* Additional styles for responsiveness and alignment */
+@media (max-width: 640px) {
+  .guide-wrapper {
+    padding-left: 10px; /* Less padding on small screens */
+    padding-right: 10px; /* Less padding on small screens */
+  }
+}
+
+/* Add any additional styles here as needed */

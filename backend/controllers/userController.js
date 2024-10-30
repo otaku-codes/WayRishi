@@ -100,7 +100,7 @@ export const getAllUser = async (req, res) => {
 };
 // get User by search
 export const getUserBySearch = async (req, res) => {
-  console.log("Request received for User search");
+
 
   const city = new RegExp(req.query.city || "", "i"); // Default to empty string if no city
   const distance = parseInt(req.query.distance) || 0; // Default to 0 if not provided

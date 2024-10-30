@@ -1686,7 +1686,6 @@ export const createBooking = async (req, res) => {
 
     // Send the email
     await transporter.sendMail(mailOptions);
-    console.log("Email sent successfully.");
 
     res.status(200).json({
       success: true,

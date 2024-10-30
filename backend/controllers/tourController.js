@@ -111,8 +111,6 @@ export const getAllTour = async (req, res) => {
 };
 // get tour by search
 export const getTourBySearch = async (req, res) => {
-  console.log("Request received for tour search");
-
   const city = new RegExp(req.query.city || "", "i"); // Default to empty string if no city
   const distance = parseInt(req.query.distance) || 0; // Default to 0 if not provided
   const maxGroupSize = parseInt(req.query.maxGroupSize) || 0; // Default to 0 if not provided
@@ -123,8 +121,6 @@ export const getTourBySearch = async (req, res) => {
       distance: { $gte: distance },
       maxGroupSize: { $gte: maxGroupSize },
     }).populate("reviews");
-
- 
 
     res.status(200).json({
       success: true,

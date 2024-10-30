@@ -58,7 +58,7 @@ export const AuthContextProvider = ({ children }) => {
   // Effect to update local storage when user state changes
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(state.user));
-    console.log("User stored in localStorage:", state.user); // Debugging log
+    // Debugging log
   }, [state.user]);
 
   return (

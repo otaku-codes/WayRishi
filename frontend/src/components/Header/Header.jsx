@@ -43,7 +43,7 @@ const Header = () => {
     return window.removeEventListener("scroll", stickyHeaderFunc);
   });
 
-  const toggleMenu =  () => menuRef.current.classList.toggle('show__menu')
+  const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
   return (
     <header className="header" ref={headerRef}>
@@ -77,7 +77,6 @@ const Header = () => {
 
             <div className="nav__right d-flex alight-items-center gap-4">
               <div className="nav__btns d-flex align-items-center gap-4">
-                {console.log("user", user)}
                 {user ? (
                   <>
                     <h5 className="mb-0">{user.username}</h5>
