@@ -4,11 +4,13 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { productImages } from "./helpers";
 import "./index.css";
+import { useNavigate } from "react-router-dom";
 
 // Context to manage global state
 const AppContext = React.createContext();
 
 const AppProvider = ({ children, docInfo }) => {
+  
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLightboxGalleryOpen, setIsLightboxGalleryOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
@@ -35,7 +37,7 @@ const AppProvider = ({ children, docInfo }) => {
   };
 
   const openLightboxGallery = () => {
-    setIsLightboxGalleryOpen(true);
+    setIsLightboxGalleryOpen(false);
   };
 
   const prevImage = () => {
@@ -79,15 +81,12 @@ const AppProvider = ({ children, docInfo }) => {
 };
 
 const App = ({ docInfo }) => {
-  
-  
+  const navigate = useNavigate();
   const {
     isCartOpen,
     setIsCartOpen,
     isLightboxGalleryOpen,
-    setIsLightboxGalleryOpen,
     product,
-    handleAddToCart,
     handleDeleteProduct,
     openLightboxGallery,
     currentImage,
@@ -95,9 +94,8 @@ const App = ({ docInfo }) => {
     nextImage,
     mainImg,
     setMainImg,
-    amount,
   } = useContext(AppContext);
-  
+
   return (
     <div className="lg:flex lg:mx-[15%]">
       <article className="gallery-container">
@@ -137,36 +135,41 @@ const App = ({ docInfo }) => {
             onClick={openLightboxGallery}
           />
           <div className="gallery-small-images bg-gray-100 p-4 rounded-lg shadow-md">
-  {docInfo.images.map((image, index) => (
-    <div
-      className={
-        image === mainImg
-          ? "active-small-img-container small-img-container border-2 border-blue-500"
-          : "small-img-container"
-      }
-      key={index}
-      onClick={() => setMainImg(image)}
-    >
-      <img src={image} alt="small-product" className="small-image rounded-md transition-transform duration-300 hover:scale-105" />
-    </div>
-  ))}
-</div>
-
+            {docInfo.images.map((image, index) => (
+              <div
+                className={
+                  image === mainImg
+                    ? "active-small-img-container small-img-container border-2 border-blue-500"
+                    : "small-img-container"
+                }
+                key={index}
+                onClick={() => setMainImg(image)}
+              >
+                <img
+                  src={image}
+                  alt="small-product"
+                  className="small-image rounded-md transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
         </section>
       </article>
 
       <section className="product-info-container">
         <h3>{docInfo.speciality}</h3>
-        <h3 className="text-black font-bold text-xl">Welcome to an Enchanting Journey!</h3>
+        <h3 className="text-black font-bold text-xl">
+          Welcome to an Enchanting Journey!
+        </h3>
 
-        <p dangerouslySetInnerHTML={{ __html: docInfo.about }}/>
+        <p dangerouslySetInnerHTML={{ __html: docInfo.about }} />
 
-        <div  />
+        <div />
 
         <div className="add-to-cart-container">
           <button
             className="add-to-cart-btn my-3"
-            onClick={() => handleAddToCart(amount)}
+            onClick={() => navigate(docInfo.address)}
           >
             <span>Book Now</span>
           </button>
@@ -223,10 +226,7 @@ const App = ({ docInfo }) => {
         <section className="lightbox-gallery-container">
           <div className="inner-lightbox-gallery-container">
             <div className="lightbox-inner-container">
-              <span
-                className="lightbox-gallery-close-btn"
-                onClick={() => setIsLightboxGalleryOpen(false)}
-              >
+              <span className="lightbox-gallery-close-btn">
                 <FaTimes />
               </span>
               <article className="gallery-big-screen-images-container lightbox-gallery-image-container">

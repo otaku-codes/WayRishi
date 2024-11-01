@@ -6,7 +6,8 @@ import { AuthContext } from "../../context/AuthContext";
 import { BASE_URL } from "../../utils/config";
 
 const Booking = ({ tour, avgRating }) => {
-  const { price, reviews, title } = tour;
+  const { price, reviews, title, guides } = tour;
+
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
@@ -18,24 +19,24 @@ const Booking = ({ tour, avgRating }) => {
     phone: "",
     guestSize: 1,
     bookAt: "",
+    selectedGuide: "", // Include selectedGuide in the booking state
   });
 
-  const [loading, setLoading] = useState(false); // Step 1: Loading state to manage duplicate requests
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setBooking((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   const serviceFee = 50;
-  const totalAmount =
-    Number(price) * Number(booking.guestSize) + Number(serviceFee);
+  const totalAmount = Number(price) * Number(booking.guestSize) + Number(serviceFee);
 
   const handleClick = async (e) => {
     e.preventDefault();
 
-    if (loading) return; // Prevent duplicate clicks
+    if (loading) return;
 
-    setLoading(true); // Set loading to true to disable button and prevent further clicks
+    setLoading(true);
 
     try {
       if (!user) {
@@ -49,7 +50,7 @@ const Booking = ({ tour, avgRating }) => {
           "Content-Type": "application/json",
         },
         credentials: "include",
-        body: JSON.stringify(booking),
+        body: JSON.stringify(booking), // Send the updated booking object
       });
 
       const result = await res.json();
@@ -63,15 +64,21 @@ const Booking = ({ tour, avgRating }) => {
     } catch (err) {
       alert(err.message);
     } finally {
-      setLoading(false); // Reset loading state after process completes
+      setLoading(false);
     }
+  };
+
+  const handleGuide = (event) => {
+    const selectedValue = event.target.value;
+    setBooking((prev) => ({ ...prev, selectedGuide: selectedValue })); // Update booking state with selected guide
   };
 
   return (
     <div className="booking">
       <div className="booking__top d-flex align-item-center justify-content-between">
         <h3>
-        ₹{price}<span>/per person</span>
+          ₹{price}
+          <span>/per person</span>
         </h3>
         <span className="tour__rating d-flex align-items-center">
           <i className="ri-star-s-fill"></i>
@@ -79,11 +86,10 @@ const Booking = ({ tour, avgRating }) => {
         </span>
       </div>
 
-      {/* ========Booking Form====================== */}
       <div className="booking__form">
         <h5>Information</h5>
         <Form className="booking__info-form" onSubmit={handleClick}>
-          <FormGroup>
+          <FormGroup className="border border-black">
             <input
               type="text"
               placeholder="Full Name"
@@ -92,7 +98,7 @@ const Booking = ({ tour, avgRating }) => {
               onChange={handleChange}
             />
           </FormGroup>
-          <FormGroup>
+          <FormGroup className="border border-black">
             <input
               type="text"
               placeholder="Phone"
@@ -101,13 +107,36 @@ const Booking = ({ tour, avgRating }) => {
               onChange={handleChange}
             />
           </FormGroup>
+
+          <FormGroup className="border border-black p-2">
+            {guides ? (
+              <select
+                id="selectedGuide"
+                value={booking.selectedGuide} // Use booking.selectedGuide for controlled component
+                required
+                onChange={handleGuide}
+                className="w-full border-none focus:outline-none focus:ring focus:ring-white"
+              >
+                <option value="" disabled>
+                  Select a guide
+                </option>
+                {guides.map((guide, index) => (
+                  <option key={index} value={guide}>
+                    {guide}
+                  </option>
+                ))}
+              </select>
+            ) : null}
+          </FormGroup>
+
           <FormGroup className="d-flex align-items-center gap-3">
             <input
               type="date"
-              placeholder=""
               id="bookAt"
               required
               onChange={handleChange}
+              className="border border-black"
+              min={new Date().toISOString().split("T")[0]}
             />
             <input
               type="number"
@@ -115,13 +144,12 @@ const Booking = ({ tour, avgRating }) => {
               id="guestSize"
               required
               onChange={handleChange}
+              className="border border-black"
             />
           </FormGroup>
         </Form>
       </div>
-      {/* ========Booking End====================== */}
 
-      {/* ========Booking Bottom====================== */}
       <div className="booking__bottom">
         <div className="d-flex justify-content-between">
           <h5 className="d-flex align-items-center gap-1">
@@ -141,9 +169,9 @@ const Booking = ({ tour, avgRating }) => {
         <Button
           className="btn primary__btn w-100 mt-4"
           onClick={handleClick}
-          disabled={loading} // Step 2: Disable button when loading
+          disabled={loading}
         >
-          {loading ? "Processing..." : "Book Now"} {/* Show loading text */}
+          {loading ? "Processing..." : "Book Now"}
         </Button>
       </div>
     </div>

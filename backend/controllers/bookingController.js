@@ -13,6 +13,7 @@ export const createBooking = async (req, res) => {
   const newBooking = new Bookings(req.body);
   try {
     const savedBooking = await newBooking.save();
+    console.log(savedBooking);
 
     const objectId = savedBooking._id;
     const id = objectId.toString();
@@ -880,9 +881,24 @@ export const createBooking = async (req, res) => {
                                             border-left: 1px solid transparent;
                                             text-align: right;
                                           "
-                                          width="25%"
+                                          width="20%"
                                         >
                                           <strong>Destination</strong>
+                                        </th>
+                                         <th
+                                          style="
+                                            padding: 10px;
+                                            word-break: break-word;
+                                            font-weight: 700;
+                                            border-top: 1px solid transparent;
+                                            border-right: 1px solid transparent;
+                                            border-bottom: 1px solid transparent;
+                                            border-left: 1px solid transparent;
+                                            text-align: right;
+                                          "
+                                          width="20%"
+                                        >
+                                          <strong>Guide</strong>
                                         </th>
                                         <th
                                           style="
@@ -895,7 +911,7 @@ export const createBooking = async (req, res) => {
                                             border-left: 1px solid transparent;
                                             text-align: right;
                                           "
-                                          width="25%"
+                                          width="20%"
                                         >
                                           Persons
                                         </th>
@@ -925,7 +941,7 @@ export const createBooking = async (req, res) => {
                                             border-left: 1px solid transparent;
                                             text-align: right;
                                           "
-                                          width="25%"
+                                          width="20%"
                                         >
                                           Date
                                         </th>
@@ -948,7 +964,7 @@ export const createBooking = async (req, res) => {
                                             border-bottom: 1px solid transparent;
                                             border-left: 1px solid transparent;
                                           "
-                                          width="25%"
+                                          width="20%"
                                         >
                                         ${savedBooking.tourName}
                                         </td>
@@ -961,7 +977,20 @@ export const createBooking = async (req, res) => {
                                             border-bottom: 1px solid transparent;
                                             border-left: 1px solid transparent;
                                           "
-                                          width="25%"
+                                          width="20%"
+                                        >
+                                        ${savedBooking.selectedGuide}
+                                        </td>
+                                        <td
+                                          style="
+                                            padding: 10px;
+                                            word-break: break-word;
+                                            border-top: 1px solid transparent;
+                                            border-right: 1px solid transparent;
+                                            border-bottom: 1px solid transparent;
+                                            border-left: 1px solid transparent;
+                                          "
+                                          width="20%"
                                         >
                                         ${savedBooking.guestSize}
                                         </td>
@@ -974,7 +1003,7 @@ export const createBooking = async (req, res) => {
                                             border-bottom: 1px solid transparent;
                                             border-left: 1px solid transparent;
                                           "
-                                          width="25%"
+                                          width="20%"
                                         >
                                         ${savedBooking.phone}
                                         </td>
@@ -987,7 +1016,7 @@ export const createBooking = async (req, res) => {
                                             border-bottom: 1px solid transparent;
                                             border-left: 1px solid transparent;
                                           "
-                                          width="25%"
+                                          width="20%"
                                         >
                                         ${new Date(
                                           savedBooking.bookAt

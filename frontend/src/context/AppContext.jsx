@@ -1,6 +1,6 @@
 // src/context/AppContext.js
 import { createContext } from "react";
-import { doctors } from "../assets/images/assets"; // Make sure this imports the correct data
+import { doctors } from "../assets/data/assets";
 
 export const AppContext = createContext();
 

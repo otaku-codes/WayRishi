@@ -26,12 +26,15 @@ const Guides = () => {
   const applyFilter = () => {
     if (selectedSpecialities.length > 0) {
       setFilterDoc(
-        doctors.filter((doc) => selectedSpecialities.includes(doc.speciality))
+        doctors.filter((doc) => 
+          selectedSpecialities.some((spec) => doc.speciality.includes(spec))
+        )
       );
     } else {
       setFilterDoc(doctors);
     }
   };
+  
 
   useEffect(() => {
     applyFilter();
@@ -58,10 +61,10 @@ const Guides = () => {
           <div className="flex-col gap-4 text-sm text-gray-600 text-center">
             <h4 className="font-bold text-lg">Select Location</h4>
             {[
-              "Almora",
-              "Chaukori",
-              "Udhampur",
               "Asol",
+              "Chaukori",
+              "Kausani",
+              "Udhampur",
             ].map((spec) => (
               <label key={spec} className="flex items-center pl-3 text-lg mx-3">
                 <input
@@ -83,11 +86,11 @@ const Guides = () => {
             {selectedSpecialities.length === 0 ? '' : ' for selected filters'}
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 gap-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 gap-y-6 ">
             {filterDoc.map((item, index) => (
               <div
                 onClick={() => navigate(`/guides/${item._id}`)}
-                className="guide-image-container" // Only the image will be clickable
+                className="guide-image-container cursor-pointer" 
                 key={index}
               >
                 <img
@@ -96,7 +99,7 @@ const Guides = () => {
                   alt={item.name}
                 />
                 <div className="guide-overlay">
-                  <p className="guide-name">{item.name}</p>
+                  <p className="guide-name text-lg text-bold font-semibold">{item.name}</p>
                   <p className="guide-speciality">{item.speciality}</p>
                 </div>
               </div>

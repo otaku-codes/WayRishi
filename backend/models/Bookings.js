@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
 
-
 const bookingSchema = new mongoose.Schema(
   {
-    usesrId: {
+    userId: {
       type: String,
     },
     userEmail: {
@@ -22,12 +21,16 @@ const bookingSchema = new mongoose.Schema(
       required: true,
     },
     phone: {
-      type: Number,
+      type: String,
       required: true,
     },
     bookAt: {
       type: Date,
-      // required: true,
+      required: true,
+    },
+    selectedGuide: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true }

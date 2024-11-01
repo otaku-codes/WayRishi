@@ -37,15 +37,20 @@ const tourSchema = new mongoose.Schema(
     reviews: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Review", 
+        ref: "Review",
       },
     ],
     featured: {
       type: Boolean,
       default: false,
     },
+    guides: [ 
+      {
+        type: String, 
+      },
+    ],
   },
-  { timestamps: true }
+  { timestamps: true } // This option remains as the second parameter
 );
 
 export default mongoose.model("Tour", tourSchema);

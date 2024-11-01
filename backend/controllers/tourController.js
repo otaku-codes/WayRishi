@@ -28,21 +28,35 @@ export const updateTour = async (req, res) => {
   const id = req.params.id;
 
   try {
+    // Attempt to find and update the tour
     const updatedTour = await Tour.findByIdAndUpdate(
       id,
       { $set: req.body },
-      { new: true }
+      { new: true, runValidators: true } 
     );
 
+    // Check if the tour exists
+    if (!updatedTour) {
+      return res.status(404).json({
+        success: false,
+        message: "Tour not found",
+      });
+    }
+
+    // Return success response with updated tour data
     res.status(200).json({
       success: true,
       message: "Successfully updated",
-      data: updateTour,
+      data: updatedTour,
     });
   } catch (err) {
+    console.error(err); // Log the error for debugging
+
+    // Return a failure response with a generic message
     res.status(500).json({
       success: false,
-      message: "failed to update",
+      message: "Failed to update",
+      error: err.message, // Optional: include error details if needed
     });
   }
 };
