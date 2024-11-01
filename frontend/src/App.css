@@ -6,8 +6,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #ff7e01;
-  --secondary-color: #faa935;
+  --primary-color: #ea3e00ee;
+  --secondary-color: #FF4500;
   --heading-color: #0b2727;
   --text-color: #6e7074;
   --font-name: "Montserrat", sans-serif;
@@ -87,7 +87,7 @@ ul {
   border-radius: 50px;
   font-weight: 500;
   font-size: 1.7rem;
-  color: var(--heading-color);
+  color: white;
 }
 
 @media only screen and (max-width: 992px) {
@@ -103,7 +103,7 @@ ul {
   }
 
   section {
-    padding: 40px 0;
+    padding: 15px 0;
   }
 }
 @media only screen and (max-width: 768px) {

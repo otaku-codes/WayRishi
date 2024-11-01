@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "../styles/home.css";
 import { Container, Row, Col } from "reactstrap";
-import heroImg from "../assets/images/hero-img01.jpg";
-import heroImg02 from "../assets/images/hero-img02.jpg";
+import heroImg from "../assets/images/himanshu-1.png";
+import heroImg02 from "../assets/images/rahul-1.png";
 import heroVideo from "../assets/images/hero-video.mp4";
 import worldImg from "../assets/images/world.png";
 import Subtitle from "../shared/Subtitle";
@@ -15,6 +15,14 @@ import Testimonials from "../components/Testimonials/Testimonials";
 import Newsletter from "../shared/Newsletter";
 
 const Home = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.85;
+    }
+  }, []);
+
   return (
     <>
       {/* {==================Hero Section Starts==========} */}
@@ -24,29 +32,40 @@ const Home = () => {
             <Col lg="6">
               <div className="hero__content">
                 <div className="hero__subtitle d-flex align-items-center">
-                  <Subtitle subtitle={"Know Before You go"} />
-                  <img src={worldImg} alt="" />
+                  <Subtitle subtitle={"Your Adventure Awaits"} />
+                  <img
+                    src={worldImg}
+                    alt=""
+                    style={{ width: "6.3rem", height: "6.3rem" }}
+                  />
                 </div>
                 <h1>
-                  Traveling opens the door to creating{" "}
-                  <span className="highlight"> memories</span>
+                  Uncover New Horizons, Embrace Timeless
+                  <span className="highlight"> Memories</span>
                 </h1>
                 <p>
-                  Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
-                  Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
-                  Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+                  Step out, explore the extraordinary, and create memories that
+                  last forever. Travel turns fleeting moments into treasures –
+                  just waiting to be discovered
                 </p>
               </div>
             </Col>
 
             <Col lg="2">
               <div className="hero__img-box">
-                <img src={heroImg} alt="" />
+                <img src={heroImg02} alt="" />
               </div>
             </Col>
             <Col lg="2">
               <div className="hero__img-box hero__video-box mt-4">
-                <video src={heroVideo} alt="" autoPlay muted loop />
+                <video
+                  ref={videoRef}
+                  src={heroVideo}
+                  alt=""
+                  autoPlay
+                  muted
+                  loop
+                />
               </div>
             </Col>
             <Col lg="2">
@@ -98,24 +117,23 @@ const Home = () => {
                   With our all experince <br /> we will serve you
                 </h2>
                 <p>
-                  Lorem ipsum dolor site amet, consecture adpispinc elit.
-                  <br />
-                  Quas aliqum, hic tempora invetore suscipit unde.
+                  We strive to create unique travel experiences that turn every
+                  trip into an unforgettable memory .
                 </p>
               </div>
 
-              <div className="counter__wrapper d-flex algin-items-center gap-5">
+              <div className="counter__wrapper d-flex align-items-center gap-5">
                 <div className="counter__box">
-                  <span>12k+</span>
-                  <h6>Successfull Trip</h6>
+                  <span>100+</span>
+                  <h6>Loyal Clients</h6>
                 </div>
                 <div className="counter__box">
-                  <span>2k+</span>
-                  <h6>Regular client</h6>
+                  <span>50+</span>
+                  <h6>Successful Trips</h6>
                 </div>
                 <div className="counter__box">
-                  <span>15</span>
-                  <h6>Years experince</h6>
+                  <span>1+</span>
+                  <h6>Year of Experience</h6>
                 </div>
               </div>
             </Col>
@@ -163,7 +181,7 @@ const Home = () => {
       </section>
       {/* ===========Testmonial Section Ends=============== */}
 
-      {/* ===========Testmonial Section Starts=============== */}
+      {/* ===========Newsletter Section Starts=============== */}
       <Newsletter />
     </>
   );

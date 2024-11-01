@@ -1,8 +1,24 @@
 .guide-image-container {
   position: relative; /* Position relative to contain absolutely positioned children */
-  width: 450px; /* Match the image width */
-  height: 300px; /* Match the image height */
+  width: 100%; /* Allow the container to take full width */
+  max-width: 450px; /* Set a max width for larger screens */
+  height: auto; /* Height will be determined by the aspect ratio */
+  aspect-ratio: 3 / 2; /* Maintain a 3:2 aspect ratio (450px / 300px) */
   overflow: hidden; /* Prevent overflow of child elements */
+}
+
+/* Optional: Adjust for smaller screens if needed */
+@media (max-width: 600px) {
+  .guide-image-container {
+    max-width: 100%; /* Full width on smaller screens */
+    height: auto; /* Let height adjust automatically */
+  }
+
+  .guide-wrapper {
+    padding-left: 0px !important; /* Adjust as necessary for spacing */
+    padding-right: 0px !important; /* Adjust as necessary for spacing */
+  }
+  
 }
 
 .guide-image {

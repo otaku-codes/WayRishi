@@ -15,7 +15,7 @@ const GuideDetails = () => {
     const fetchDocInfo = () => {
       const docInfo = doctors.find((doc) => doc._id === docId);
       setDocInfo(docInfo);
-      // console.log(docInfo);
+
     };
 
     if (doctors.length > 0) {

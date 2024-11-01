@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { productImages } from "./helpers";
-import "./index.css";
+import "./mainapp.css";
 import { useNavigate } from "react-router-dom";
 
 // Context to manage global state

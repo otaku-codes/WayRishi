@@ -1,11 +1,14 @@
 import Bookings from "../models/Bookings.js";
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "himanshupapola.ph@gmail.com",
-    pass: "guydhyoufbvcocck",
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 

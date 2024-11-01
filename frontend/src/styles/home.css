@@ -30,10 +30,21 @@
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .hero__img-box img,
+  .hero__img-box video {
+    height: 550px;
+  }
+}
 .hero__content {
   padding-top: 3.5rem;
 }
 
+@media (max-width: 768px) {
+  .hero__content {
+    padding-top: 1.5rem; 
+  }
+}
 .hero__img-box {
   padding-top: 2rem;
 }
@@ -92,9 +103,17 @@
 }
 
 .experience__img img {
-  width: 90%;
+  text-align: center;
+  border-radius: 9px;
+  width: 60%;
+  margin: auto;
 }
 
+@media (max-width: 768px) {
+  .experience__img img {
+    width: 100%; 
+  }
+}
 .gallery__title {
   font-size: 2.3rem;
   margin-bottom: 2.5rem;
