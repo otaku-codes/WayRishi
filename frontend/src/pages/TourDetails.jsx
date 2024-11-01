@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import "../styles/tour-details.css";
 import { Container, Row, Col, Form, ListGroup } from "reactstrap";
 import { useParams } from "react-router-dom";
-import tourData from "../assets/data/tours";
 import calculateAvgRating from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
 import Booking from "../components/Booking/Booking";
@@ -116,11 +115,11 @@ const TourDetails = () => {
                         <i className="ri-map-pin-2-line"></i> {city}
                       </span>
                       <span>
-                        <i className="ri-money-dollar-circle-line"></i> ${price}{" "}
+                        <i className="ri-money-dollar-circle-line"></i> ₹{price}{" "}
                         /per person
                       </span>
                       <span>
-                        <i className="ri-map-pin-time-line"></i> ${distance} k/m
+                        <i className="ri-map-pin-time-line"></i>{distance} k/m around
                       </span>
                       <span>
                         <i className="ri-group-line"></i>

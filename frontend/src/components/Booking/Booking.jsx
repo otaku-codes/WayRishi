@@ -26,15 +26,15 @@ const Booking = ({ tour, avgRating }) => {
     setBooking((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const serviceFee = 10;
+  const serviceFee = 50;
   const totalAmount =
     Number(price) * Number(booking.guestSize) + Number(serviceFee);
 
   const handleClick = async (e) => {
     e.preventDefault();
-    
+
     if (loading) return; // Prevent duplicate clicks
-    
+
     setLoading(true); // Set loading to true to disable button and prevent further clicks
 
     try {
@@ -71,7 +71,7 @@ const Booking = ({ tour, avgRating }) => {
     <div className="booking">
       <div className="booking__top d-flex align-item-center justify-content-between">
         <h3>
-          ${price} <span>/per person</span>
+        ₹{price}<span>/per person</span>
         </h3>
         <span className="tour__rating d-flex align-items-center">
           <i className="ri-star-s-fill"></i>
@@ -125,17 +125,17 @@ const Booking = ({ tour, avgRating }) => {
       <div className="booking__bottom">
         <div className="d-flex justify-content-between">
           <h5 className="d-flex align-items-center gap-1">
-            ${price} <i className="ri-close-line"></i> 1 person
+            ₹{price} <i className="ri-close-line"></i> 1 person
           </h5>
-          <span> ${price}</span>
+          <span> ₹{price}</span>
         </div>
         <div className="d-flex justify-content-between">
           <h5>Service charge</h5>
-          <span> $10</span>
+          <span> ₹50</span>
         </div>
         <div className="d-flex justify-content-between total">
           <h5>Total</h5>
-          <span> ${totalAmount}</span>
+          <span> ₹{totalAmount}</span>
         </div>
 
         <Button

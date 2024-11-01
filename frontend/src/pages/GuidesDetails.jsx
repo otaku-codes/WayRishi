@@ -4,34 +4,32 @@ import { useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import Newsletter from "../shared/Newsletter";
 import GuideCommon from "../shared/GuideCommon";
+import MainApp from "./MainApp";
 
 const GuideDetails = () => {
-  const { docId } = useParams(); 
-  const { doctors } = useContext(AppContext); 
+  const { docId } = useParams();
+  const { doctors } = useContext(AppContext);
   const [docInfo, setDocInfo] = useState(null);
 
   useEffect(() => {
+    const fetchDocInfo = () => {
+      const docInfo = doctors.find((doc) => doc._id === docId);
+      setDocInfo(docInfo);
+      // console.log(docInfo);
+    };
 
-    const foundDoc = doctors.find((doc) => doc._id === docId);
-    setDocInfo(foundDoc); 
+    if (doctors.length > 0) {
+      fetchDocInfo();
+    }
   }, [doctors, docId]);
+
+  if (!docInfo) return <p>Loading...</p>;
 
   return (
     <>
-     <GuideCommon title={"All Guides"} />
-      <div>
-      {docInfo ? (
-        <>
-          <h1>{docInfo.name}</h1>
-          <p>Speciality: {docInfo.speciality}</p>
-          <img src={docInfo.image} alt={docInfo.name} />
-          <p>{docInfo.description}</p>
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-    <Newsletter/>
+      <GuideCommon title={docInfo.name} />
+      <MainApp docInfo={docInfo}/>
+      <Newsletter />
     </>
   );
 };

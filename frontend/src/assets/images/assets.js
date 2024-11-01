@@ -15,9 +15,11 @@ import info_icon from "./info_icon.svg";
 import upload_icon from "./upload_icon.png";
 import stripe_logo from "./stripe_logo.png";
 import razorpay_logo from "./razorpay_logo.png";
-import doc1 from "./doc1.png";
-import doc2 from "./doc2.png";
-import doc3 from "./doc3.png";
+import anish from "./anish.jpg";
+import anish1 from "./anish-1.jpg";
+import anish2 from "./anish-2.jpg";
+import anish3 from "./anish-3.jpg";
+import anish4 from "./anish-4.jpg";
 import doc4 from "./doc4.png";
 import doc5 from "./doc5.png";
 import doc6 from "./doc6.png";
@@ -88,7 +90,8 @@ export const doctors = [
   {
     _id: "doc1",
     name: "Dr. Richard James",
-    image: "https://www.onacheaptrip.com/wp-content/uploads/onacheaptrip-at-Nainital-Uttarakhand.jpg",
+    image:
+      "https://www.onacheaptrip.com/wp-content/uploads/onacheaptrip-at-Nainital-Uttarakhand.jpg",
     speciality: "Almora",
     degree: "MBBS",
     experience: "4 Years",
@@ -116,14 +119,15 @@ export const doctors = [
     },
   },
   {
-    _id: "doc1",
-    name: "Dr. Richard James",
-    image: "https://www.onacheaptrip.com/wp-content/uploads/onacheaptrip-at-Nainital-Uttarakhand.jpg",
-    speciality: "Almora",
+    _id: "anish",
+    name: "Anish Sharma",
+    image: anish,
+    images: [anish, anish1, anish2, anish3, anish4],
+    speciality: "Udhampur",
     degree: "MBBS",
     experience: "4 Years",
     about:
-      "Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",
+      "<p>Embark on a mystical expedition through the captivating landscapes of Jammu and Kashmir. This guide unveils two hidden gems: Sudh Mahadev and Mantalai, promising unforgettable experiences.<h5>Sudh Mahadev: A Divine Sanctuary</h5><p>Located 42 kilometers from Patnitop, Sudh Mahadev Temple is steeped in legend. It features a stunning black marble statue of Shiva and attracts many devotees during full moon nights in Sawan.<h5>Mantalai: Nature’s Embrace</h5><p>Mantalai is a serene village surrounded by lush deodar forests at 1,450 meters. According to lore, this is where Lord Shiva married Goddess Parvati, offering scenic trails to Naina Devi.<h5>Udhampur: Gateway to Exploration</h5><p>Don’t miss Udhampur, the third-largest city in Jammu, surrounded by Eucalyptus forests. It serves as the district capital and hosts the Northern Command headquarters of the Indian Army.<h5>Plan Your Visit</h5><p>Ready for your spiritual adventure? We’ll help you navigate your journey with accommodation, travel tips, and guided tours for a memorable visit to Sudh Mahadev and Mantalai.",
     fees: 50,
     address: {
       line1: "17th Cross, Richmond",
@@ -145,65 +149,4 @@ export const doctors = [
       line2: "Circle, Ring Road, London",
     },
   },
-  {
-    _id: "doc1",
-    name: "Dr. Richard James",
-    image: "https://www.onacheaptrip.com/wp-content/uploads/onacheaptrip-at-Nainital-Uttarakhand.jpg",
-    speciality: "Almora",
-    degree: "MBBS",
-    experience: "4 Years",
-    about:
-      "Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",
-    fees: 50,
-    address: {
-      line1: "17th Cross, Richmond",
-      line2: "Circle, Ring Road, London",
-    },
-  },
-  {
-    _id: "doc2",
-    name: "Dr. Emily Larson",
-    image: "http://www.traveldairyofvatsal.com/kumaon/himalays_at_chakauri.jpg",
-    speciality: "Chaukori",
-    degree: "MBBS",
-    experience: "3 Years",
-    about:
-      "Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",
-    fees: 60,
-    address: {
-      line1: "27th Cross, Richmond",
-      line2: "Circle, Ring Road, London",
-    },
-  },
-  {
-    _id: "doc1",
-    name: "Dr. Richard James",
-    image: "https://www.onacheaptrip.com/wp-content/uploads/onacheaptrip-at-Nainital-Uttarakhand.jpg",
-    speciality: "Almora",
-    degree: "MBBS",
-    experience: "4 Years",
-    about:
-      "Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",
-    fees: 50,
-    address: {
-      line1: "17th Cross, Richmond",
-      line2: "Circle, Ring Road, London",
-    },
-  },
-  {
-    _id: "doc2",
-    name: "Dr. Emily Larson",
-    image: "http://www.traveldairyofvatsal.com/kumaon/himalays_at_chakauri.jpg",
-    speciality: "Chaukori",
-    degree: "MBBS",
-    experience: "3 Years",
-    about:
-      "Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",
-    fees: 60,
-    address: {
-      line1: "27th Cross, Richmond",
-      line2: "Circle, Ring Road, London",
-    },
-  },
-
 ];

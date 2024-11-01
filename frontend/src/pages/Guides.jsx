@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import AppContextProvider, { AppContext } from "../context/AppContext";
-import "./guides.css"; // Ensure this file contains the necessary CSS
+import "./guides.css";
 import GuideCommon from "../shared/GuideCommon";
 import Newsletter from "../shared/Newsletter";
 
@@ -60,9 +60,8 @@ const Guides = () => {
             {[
               "Almora",
               "Chaukori",
-              "Oli",
+              "Udhampur",
               "Asol",
-              "J",
             ].map((spec) => (
               <label key={spec} className="flex items-center pl-3 text-lg mx-3">
                 <input
