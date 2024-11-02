@@ -1,21 +1,23 @@
-import galleryImg01 from "../../assets/images/gallery-01.jpg";
-import galleryImg02 from "../../assets/images/gallery-02.jpg";
-import galleryImg03 from "../../assets/images/gallery-03.jpg";
-import galleryImg04 from "../../assets/images/gallery-04.jpg";
-import galleryImg05 from "../../assets/images/gallery-05.jpg";
-import galleryImg06 from "../../assets/images/gallery-06.jpg";
-import galleryImg07 from "../../assets/images/gallery-07.jpg";
+import galleryImg01 from "../../assets/images/gallery-08.png";
+import galleryImg02 from "../../assets/images/gallery-09.png";
+import galleryImg03 from "../../assets/images/gallery-10.png";
+import galleryImg04 from "../../assets/images/gallery-11.png";
+import galleryImg05 from "../../assets/images/gallery-12.png";
+import galleryImg08 from "../../assets/images/himanshu.png";
+import galleryImg06 from "../../assets/images/anish-1.jpg";
+import galleryImg10 from "../../assets/images/rahul-1.png";
+
+
 
 const galleryImages = [
   galleryImg01,
-  galleryImg07,
-  galleryImg02,
+  galleryImg08,
   galleryImg06,
   galleryImg03,
+  galleryImg02,
+  galleryImg10,
   galleryImg04,
   galleryImg05,
-
-  galleryImg07,
 ];
 
 export default galleryImages;

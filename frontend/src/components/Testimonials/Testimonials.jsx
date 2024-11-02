@@ -40,9 +40,9 @@ const Testimonials = () => {
       image: "https://app.tanyakhanijow.com/wp-content/uploads/2022/12/4F2A9861-6-1-1.jpg",
     },
     {
-      text: "Kasauli is a hidden gem! The hospitality was exceptional, and I loved every moment of my stay here. Highly recommend!",
+      text: "Kausani is a hidden gem! The hospitality was exceptional, and I loved every moment of my stay here. Highly recommend!",
       name: "Ravi Mehta",
-      location: "Kasauli, Uttarakhand",
+      location: "Kausani, Uttarakhand",
       image: "https://www.solotravellersmeetup.com/wp-content/uploads/2017/10/1-696x464.jpg",
     },
     {
@@ -58,9 +58,9 @@ const Testimonials = () => {
       image: "https://img.freepik.com/premium-photo/indian-girl-enjoying-rock-mountains-hill_437792-434.jpg",
     },
     {
-      text: "Kasauli is perfect for a weekend getaway! I enjoyed the scenic beauty and the friendly locals. Will definitely come back!",
+      text: "Kausani is perfect for a weekend getaway! I enjoyed the scenic beauty and the friendly locals. Will definitely come back!",
       name: "Nisha Gupta",
-      location: "Kasauli, Uttarakhand",
+      location: "Kausani, Uttarakhand",
       image: "https://inspireuadventures.com/wp-content/uploads/2018/02/trekking-nepal-por-libre-1.jpg",
     },
   ];
