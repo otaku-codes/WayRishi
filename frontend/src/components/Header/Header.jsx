@@ -86,8 +86,8 @@ const Header = () => {
                   </>
                 ) : (
                   <>
-                    <Button className="btn secondary__btn">
-                      <Link to="/login">Login</Link>
+                    <Button className="btn primary__btn btn btn-secondary bg-white ">
+                      <Link className="text-black font-semibold" to="/login">Login</Link>
                     </Button>
                     <Button className="btn primary__btn">
                       <Link to="/register">Register</Link>

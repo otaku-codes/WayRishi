@@ -37,7 +37,7 @@ const Login = () => {
       const result = await res.json();
       if (!res.ok) {
         dispatch({ type: "LOGIN_FAILURE", payload: result.message });
-        return; // Prevent further execution if login fails
+        return;
       }
 
       dispatch({ type: "LOGIN_SUCCESS", payload: result.data });

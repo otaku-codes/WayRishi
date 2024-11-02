@@ -154,7 +154,7 @@ const Home = () => {
             <Col lg="12">
               <Subtitle subtitle={"Gallery"} />
               <h2 className="gallery__title">
-                Visit our customer tour gallery
+                Discover Our Customer Adventures
               </h2>
             </Col>
             <Col lg="12">
@@ -171,7 +171,9 @@ const Home = () => {
           <Row>
             <Col lg="12">
               <Subtitle subtitle={"Fans Love"} />
-              <h2 className="testimonial__title">What our fans say about us</h2>
+              <h2 className="testimonial__title">
+                Fan Experiences That Inspire Us
+              </h2>
             </Col>
             <Col lg="12">
               <Testimonials />

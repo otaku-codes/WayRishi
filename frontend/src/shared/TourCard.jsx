@@ -9,7 +9,6 @@ const TourCard = ({ tour }) => {
   const { _id, title, city, photo, price, featured, reviews } = tour;
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
-
   return (
     <div className="tour__card">
       <Card>
@@ -40,11 +39,13 @@ const TourCard = ({ tour }) => {
 
           <div className="card__bottom d-flex align-items-center justify-content-between mt-3">
             <h5>
-            ₹{price} <span> /per person</span>
+              ₹{price} <span> /per person</span>
             </h5>
 
-            <button className="btn booking__btn">
-              <Link to={`/tours/${_id}`}>Book Now</Link>
+            <button className="btn booking__btn" style={{ background: "none" }}>
+              <Link to={`/tours/${_id}`} style={{ textDecoration: "none" }} className="font-medium">
+                Book Now
+              </Link>
             </button>
           </div>
         </CardBody>

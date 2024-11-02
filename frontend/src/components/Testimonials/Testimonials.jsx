@@ -59,7 +59,7 @@ const Testimonials = () => {
     },
     {
       text: "Kausani is perfect for a weekend getaway! I enjoyed the scenic beauty and the friendly locals. Will definitely come back!",
-      name: "Nisha Gupta",
+      name: "Nikhli Verma",
       location: "Kausani, Uttarakhand",
       image: "https://inspireuadventures.com/wp-content/uploads/2018/02/trekking-nepal-por-libre-1.jpg",
     },
@@ -75,10 +75,10 @@ const Testimonials = () => {
               src={testimonial.image}
               alt="Customer"
               style={{
-                width: "80px", // Set your desired width
-                height: "80px", // Set your desired height
-                objectFit: "cover", // Use cover to maintain aspect ratio and fill the space
-                borderRadius: "50%", // Optional: Make the images circular
+                width: "80px",
+                height: "80px",
+                objectFit: "cover", 
+                borderRadius: "50%", 
               }}
             />
             <div>

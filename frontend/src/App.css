@@ -6,10 +6,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #ea3e00ee;
-  --secondary-color: #FF4500;
+  --primary-color: #000767ee;
+  --secondary-color: #321585;
   --heading-color: #0b2727;
-  --text-color: #6e7074;
+  --text-color: #494b4f;
   --font-name: "Montserrat", sans-serif;
   --subtitle-font-name: "Island Moments", cursive;
 }
@@ -18,10 +18,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
   font-family: var(--font-name);
+  overflow-x: hidden !important;
 }
 
 section {
@@ -41,6 +43,7 @@ a {
   text-decoration: none;
   color: unset;
 }
+
 ul {
   list-style: none;
 }
@@ -57,9 +60,11 @@ ul {
   text-decoration: none;
   color: #fff;
 }
+
 .primary__btn a:hover {
   color: inherit;
 }
+
 .secondary__btn {
   background: transparent !important;
   color: #0b2727 !important;
@@ -83,11 +88,28 @@ ul {
   width: max-content;
   padding: 0px 0.5rem;
   padding-right: 1rem;
-
   border-radius: 50px;
   font-weight: 500;
   font-size: 1.7rem;
   color: white;
+}
+
+/* Prevent dragging of images site-wide */
+img {
+  user-drag: none; 
+  -moz-user-drag: none;
+  -webkit-user-drag: none; 
+}
+
+/* Text selection color */
+::selection {
+  background-color: #33ff0094; /* Radiant Yellow Background */
+  color: #000; /* Black text for contrast */
+}
+
+::-moz-selection {
+  background-color: #ffff00; /* For Firefox */
+  color: #000; /* Black text for contrast */
 }
 
 @media only screen and (max-width: 992px) {
@@ -106,6 +128,7 @@ ul {
     padding: 15px 0;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .section__subtitle {
     font-size: 1.3rem;

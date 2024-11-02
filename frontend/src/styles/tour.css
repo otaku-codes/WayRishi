@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--secondary-color);
-  color: var(--hading-color);
+  color: white;
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
@@ -15,5 +15,5 @@
 
 .active__page {
   background: var(--secondary-color);
-  color: #fff;
+  color: #ffffff;
 }
