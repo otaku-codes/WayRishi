@@ -16,20 +16,19 @@ const port = process.env.PORT || 8000;
 // CORS options
 const corsOptions = {
   origin: "http://localhost:3000", // Update to your frontend URL
-  credentials: true, // Allow credentials
+  credentials: true,
 };
 
 // Database connection
 mongoose.set("strictQuery", false);
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI); 
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("MongoDB connected");
   } catch (err) {
     console.error("Error connecting to MongoDB:", err);
   }
 };
-
 
 // For testing
 app.get("/", (req, res) => {
