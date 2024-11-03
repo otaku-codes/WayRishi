@@ -18,10 +18,10 @@ import anish3 from "../images/anish-3.jpg";
 import anish4 from "../images/anish-4.jpg";
 
 // Rahul
-import rahul from "../images/rahul.png";
+import rahul from "../images/rahul-0.png";
 import rahul1 from "../images/rahul-1.png";
 import rahul2 from "../images/rahul-2.png";
-import rahul3 from "../images/rahul-3.png";
+import rahul3 from "../images/rahul.png";
 import rahul4 from "../images/rahul-4.png";
 
 // himanshu
@@ -94,7 +94,7 @@ export const doctors = [
   {
     _id: "rahul",
     name: "Rahul Sah",
-    image: "http://www.traveldairyofvatsal.com/kumaon/himalays_at_chakauri.jpg",
+    image: rahul,
     images: [rahul1, rahul2, rahul, rahul3, rahul4],
     speciality: "Chaukori",
     degree: "MBBS",
