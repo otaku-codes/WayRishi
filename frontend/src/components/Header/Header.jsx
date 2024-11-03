@@ -51,9 +51,11 @@ const Header = () => {
         <Row>
           <div className="nav__wrapper d-flex align-item-center justify-content-between">
             {/*=========================Logo================*/}
-            <div className="logo">
-              <img src={logo} alt="" />
-            </div>
+            <Link to="/">
+              <div className="logo">
+                <img src={logo} alt="Logo" />
+              </div>
+            </Link>
             {/*=========================Logo================*/}
 
             {/*=========================Menu Start================*/}
@@ -87,7 +89,9 @@ const Header = () => {
                 ) : (
                   <>
                     <Button className="btn primary__btn btn btn-secondary bg-white ">
-                      <Link className="text-black font-semibold" to="/login">Login</Link>
+                      <Link className="text-black font-semibold" to="/login">
+                        Login
+                      </Link>
                     </Button>
                     <Button className="btn primary__btn">
                       <Link to="/register">Register</Link>

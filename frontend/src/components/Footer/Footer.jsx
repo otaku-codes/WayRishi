@@ -43,12 +43,14 @@ const Footer = () => {
         <div className="container p-4">
           <div className="row my-4">
             <div className="col-lg-3 col-md-6 mb-4 mb-md-0 specail">
-              <div
-                className="rounded-circle shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
-                style={{ maxWidth: "150px", minWidth: "210px" }}
-              >
-                <img src={logo} height="70" alt="Logo" loading="lazy" />
-              </div>
+              <Link to="/">
+                <div
+                  className="rounded-circle shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+                  style={{ maxWidth: "150px", minWidth: "210px" }}
+                >
+                  <img src={logo} height="70" alt="Logo" loading="lazy" />
+                </div>
+              </Link>
               <p className="text-center">
                 Uncover New Horizons
                 <br />
