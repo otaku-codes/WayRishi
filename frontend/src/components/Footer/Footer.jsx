@@ -56,24 +56,40 @@ const Footer = () => {
               </p>
               <div className="social__links d-flex align-items-center gap-4 justify-center">
                 <span>
-                  <Link to="#">
+                  <a
+                    href="https://www.youtube.com/@otaku_codes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="ri-youtube-line"></i>
-                  </Link>
+                  </a>
                 </span>
                 <span>
-                  <Link to="#">
+                  <a
+                    href="https://github.com/otaku-codes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="ri-github-fill"></i>
-                  </Link>
+                  </a>
                 </span>
                 <span>
-                  <Link to="#">
+                  <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="ri-facebook-circle-line"></i>
-                  </Link>
+                  </a>
                 </span>
                 <span>
-                  <Link to="#">
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="ri-instagram-line"></i>
-                  </Link>
+                  </a>
                 </span>
               </div>
             </div>

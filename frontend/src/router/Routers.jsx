@@ -8,7 +8,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import SearchResultList from "../pages/SearchResultList";
 import ThankYou from "../pages/ThankYou";
-import GuidesPage from "../pages/Guides"; // Ensure this is pointing to your GuidesPage component
+import GuidesPage from "../pages/Guides"; 
 import About from "../pages/About";
 import GuideDetails from "../pages/GuidesDetails";
 
@@ -27,6 +27,7 @@ const Routers = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/thank-you" element={<ThankYou />} />
       <Route path="/tours/search" element={<SearchResultList />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };
