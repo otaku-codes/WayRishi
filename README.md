@@ -38,12 +38,12 @@ cd WayRishi
 In the .env file, find the line that reads:
 
 `PORT = 4000`
-`MONGO_URI="your-mongodb-uri"`
-`JWT_SECRET_KEY=gahg3834334ajfuaudfHfisdfdsf`
+`MONGO_URI="your_mongodb_uri"`
+`JWT_SECRET_KEY="random_key"`
 `EMAIL_USER="your_gmail`
 `EMAIL_PASS="your_pass"`
 
-Replace "your-mongodb-uri" with the actual URI of your MongoDB database and EMAIL_USER and EMAIL_PASS with gmail App password.
+Replace "your_mongodb_uri" with the actual URI of your MongoDB database and EMAIL_USER and EMAIL_PASS with gmail App password.
 
 #### Step 5: Install Backend Dependencies
 
