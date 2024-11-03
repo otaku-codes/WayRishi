@@ -182,13 +182,11 @@
   align-items: center;
   flex-direction: column;
   backdrop-filter: blur(15px);
-  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -10px 10px rgb(0 0 0 / 43%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
   transition: bottom 0.5s;
   transition-delay: 0.65s;
 }
-
 .card:hover .content {
   bottom: 0;
   transition-delay: 0s;
@@ -245,23 +243,20 @@
   font-size: 24px;
 }
 
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-  .card .content {
-    bottom: 0;
-    transition: none;
-    height: 140px;
-  }
+.card .content {
+  bottom: 0;
+  transition: none;
+  height: 120px;
+}
 
-  .content .contentBx h3 {
-    opacity: 1;
-    transform: translateY(0);
-    transition: none;
-  }
+.content .contentBx h3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition: none;
+}
 
-  .content .sci li {
-    transform: translateY(0);
-    opacity: 1;
-    transition: none;
-  }
+.content .sci li {
+  transform: translateY(0);
+  opacity: 1;
+  transition: none;
 }

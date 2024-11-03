@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Container, Row, Col, Button, FormGroup, Form } from "reactstrap";
+import { Row, Col, Button, FormGroup, Form } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/login.css";
 
@@ -48,51 +48,57 @@ const Login = () => {
   };
 
   return (
-    <section>
-      <Row>
-        <Col lg="8" className="m-auto">
-          <div className="login__container d-flex justify-content-between">
-            <div className="login__img">
-              <img src={loginImg} alt="" />
-            </div>
-
-            <div className="login__form">
-              <div className="user">
-                <img src={userIcon} alt="" />
+    <>
+      {" "}
+      <section>
+        <Row>
+          <Col lg="8" className="m-auto">
+            <div className="login__container d-flex justify-content-between">
+              <div className="login__img">
+                <img src={loginImg} alt="" />
               </div>
-              <h2>Login</h2>
 
-              <Form onSubmit={handleClick}>
-                <FormGroup>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    id="email"
-                    onChange={handleChange}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    required
-                    id="password"
-                    onChange={handleChange}
-                  />
-                </FormGroup>
-                <Button className="btn secondary__btn auth__btn" type="submit">
-                  Login
-                </Button>
-              </Form>
-              <p>
-                Don't have an account? <Link to="/register">Create</Link>
-              </p>
+              <div className="login__form">
+                <div className="user">
+                  <img src={userIcon} alt="" />
+                </div>
+                <h2>Login</h2>
+
+                <Form onSubmit={handleClick}>
+                  <FormGroup>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      required
+                      id="email"
+                      onChange={handleChange}
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      required
+                      id="password"
+                      onChange={handleChange}
+                    />
+                  </FormGroup>
+                  <Button
+                    className="btn secondary__btn auth__btn"
+                    type="submit"
+                  >
+                    Login
+                  </Button>
+                </Form>
+                <p>
+                  Don't have an account? <Link to="/register">Create</Link>
+                </p>
+              </div>
             </div>
-          </div>
-        </Col>
-      </Row>
-    </section>
+          </Col>
+        </Row>
+      </section>
+    </>
   );
 };
 

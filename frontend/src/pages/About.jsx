@@ -40,105 +40,106 @@ const About = () => {
       <div>
         {/* About Section */}
         <section id="about">
-  <div className="container">
-    <header className="section-header text-center mb-5 pb-2">
-      <div className="title">
-        <h4>About Us</h4>
-      </div>
+          <div className="container">
+            <header className="section-header text-center mb-5 pb-2">
+              <div className="title">
+                <h4>About Us</h4>
+              </div>
 
-      <p>
-        <span className="font-semibold" style={{ fontSize: "20px" }}>
-          Welcome to WayRishi, your ultimate travel companion!
-        </span>
-        <br /> We connect explorers with expert guides across various
-        destinations in India, offering personalized experiences that enrich
-        your journey. Whether you're seeking the serene landscapes of Jammu,
-        the majestic mountains of Himachal Pradesh, or the breathtaking beauty
-        of Uttarakhand, we have knowledgeable guides ready to help you uncover
-        the hidden gems and local treasures of each region. From historical
-        sites to cultural experiences, WayRishi ensures that your adventures
-        are not just memorable but also immersive, allowing you to connect
-        deeply with the vibrant tapestry of India's diverse landscapes and
-        traditions.
-      </p>
-    </header>
+              <p>
+                <span className="font-semibold" style={{ fontSize: "20px" }}>
+                  Welcome to WayRishi, your ultimate travel companion!
+                </span>
+                <br /> We connect explorers with expert guides across various
+                destinations in India, offering personalized experiences that
+                enrich your journey. Whether you're seeking the serene
+                landscapes of Jammu, the majestic mountains of Himachal Pradesh,
+                or the breathtaking beauty of Uttarakhand, we have knowledgeable
+                guides ready to help you uncover the hidden gems and local
+                treasures of each region. From historical sites to cultural
+                experiences, WayRishi ensures that your adventures are not just
+                memorable but also immersive, allowing you to connect deeply
+                with the vibrant tapestry of India's diverse landscapes and
+                traditions.
+              </p>
+            </header>
 
-    <div className="row about-cols">
-      <div className="col-md-4 wow fadeInUp">
-        <div className="about-col">
-          <div className="img">
-            <img
-              src="img/about-mission.webp"
-              alt=""
-              className="img-fluid"
-            />
-            <div className="icon">
-              <i className="fas fa-bullseye"></i> {/* Updated icon */}
+            <div className="row about-cols">
+              <div className="col-md-4 wow fadeInUp">
+                <div className="about-col">
+                  <div className="img">
+                    <img
+                      src="img/about-mission.webp"
+                      alt=""
+                      className="img-fluid"
+                    />
+                    <div className="icon">
+                      <i className="fas fa-bullseye"></i> {/* Updated icon */}
+                    </div>
+                  </div>
+                  <h2 className="title">
+                    <a href="#" style={{ textDecoration: "none" }}>
+                      Our Mission
+                    </a>
+                  </h2>
+                  <p className="text-center">
+                    To make every journey memorable by providing seamless,
+                    personalized travel experiences.
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div className="about-col">
+                  <div className="img">
+                    <img
+                      src="img/about-plan.webp"
+                      alt=""
+                      className="img-fluid"
+                    />
+                    <div className="icon">
+                      <i className="fas fa-plane-departure"></i>{" "}
+                      {/* Updated icon */}
+                    </div>
+                  </div>
+                  <h2 className="title">
+                    <a href="#" style={{ textDecoration: "none" }}>
+                      What We Offer
+                    </a>
+                  </h2>
+                  <p className="text-center">
+                    Guided tours with local experts, Custom travel packages,
+                    Easy booking and payment processes
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div className="about-col">
+                  <div className="img">
+                    <img
+                      src="img/about-vision.webp"
+                      alt=""
+                      className="img-fluid"
+                    />
+                    <div className="icon">
+                      <i className="fas fa-eye"></i> {/* Updated icon */}
+                    </div>
+                  </div>
+                  <h2 className="title">
+                    <a href="#" style={{ textDecoration: "none" }}>
+                      Our Vision
+                    </a>
+                  </h2>
+                  <p className="text-center">
+                    To become the leading platform for guided travel and
+                    exploration, promoting cultural exchange and adventure.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <h2 className="title">
-            <a href="#" style={{ textDecoration: "none" }}>
-              Our Mission
-            </a>
-          </h2>
-          <p className="text-center">
-            To make every journey memorable by providing seamless, personalized
-            travel experiences.
-          </p>
-        </div>
-      </div>
-
-      <div className="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-        <div className="about-col">
-          <div className="img">
-            <img
-              src="img/about-plan.webp"
-              alt=""
-              className="img-fluid"
-            />
-            <div className="icon">
-              <i className="fas fa-plane-departure"></i> {/* Updated icon */}
-            </div>
-          </div>
-          <h2 className="title">
-            <a href="#" style={{ textDecoration: "none" }}>
-              What We Offer
-            </a>
-          </h2>
-          <p className="text-center">
-            Guided tours with local experts, Custom travel packages, Easy
-            booking and payment processes
-          </p>
-        </div>
-      </div>
-
-      <div className="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-        <div className="about-col">
-          <div className="img">
-            <img
-              src="img/about-vision.webp"
-              alt=""
-              className="img-fluid"
-            />
-            <div className="icon">
-              <i className="fas fa-eye"></i> {/* Updated icon */}
-            </div>
-          </div>
-          <h2 className="title">
-            <a href="#" style={{ textDecoration: "none" }}>
-              Our Vision
-            </a>
-          </h2>
-          <p className="text-center">
-            To become the leading platform for guided travel and exploration,
-            promoting cultural exchange and adventure.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+        </section>
       </div>
       <div className="wrapper">
         <div className="title">
@@ -158,10 +159,17 @@ const About = () => {
                   style={{
                     filter: "grayscale(100%)",
                     width: "100%",
-                    ...(member.name === "Dheeraj Sharma" && {
-                      width: "125%",
-                      maxWidth: "125%",
-                    }),
+                    ...(member.name === "Dheeraj Sharma"
+                      ? {
+                          width: "125%",
+                          maxWidth: "125%",
+                        }
+                      : member.name === "Anish Sharma"
+                      ? {
+                          width: "120%",
+                          maxWidth: "120%",
+                        }
+                      : {}),
                   }}
                 />
               </div>
