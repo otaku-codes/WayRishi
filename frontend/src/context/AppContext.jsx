@@ -5,7 +5,7 @@ import { doctors } from "../assets/data/assets";
 export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
-  const value = { doctors }; // Provide the doctors data to the context
+  const value = { doctors }; 
 
   return (
     <AppContext.Provider value={value}>
