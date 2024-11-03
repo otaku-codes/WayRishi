@@ -15,7 +15,7 @@ const port = process.env.PORT || 8000;
 
 // CORS options
 const corsOptions = {
-  origin: "https://wayrishi-g9m4.onrender.com", // Update to your frontend URL
+  origin: "https://way-rishi.vercel.app", // Update to your frontend URL
   credentials: true,
 };
 

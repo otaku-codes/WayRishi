@@ -93,4 +93,4 @@ This command will start the frontend server, and you'll be able to access the we
 
 - Frontend (Client Side) - [`🚀 Click to Visit`][frontend-link]
 
-[frontend-link]: https://comingsoon.com
+[frontend-link]: https://wayrishi-g9m4.onrender.com
