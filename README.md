@@ -40,8 +40,8 @@ In the .env file, find the line that reads:
 `PORT = 4000`
 `MONGO_URI="your-mongodb-uri"`
 `JWT_SECRET_KEY=gahg3834334ajfuaudfHfisdfdsf`
-`EMAIL_USER=himanshupapola.ph@gmail.com`
-`EMAIL_PASS=sjvyaqpnqyjuubcg`
+`EMAIL_USER="your_gmail`
+`EMAIL_PASS="your_pass"`
 
 Replace "your-mongodb-uri" with the actual URI of your MongoDB database and EMAIL_USER and EMAIL_PASS with gmail App password.
 
