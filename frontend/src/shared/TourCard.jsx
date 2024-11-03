@@ -4,6 +4,7 @@ import { Card, CardBody } from "reactstrap";
 import calculateAvgRating from "../utils/avgRating";
 
 import "./tour-card.css";
+import { maxHeight } from "@mui/system";
 
 const TourCard = ({ tour }) => {
   const { _id, title, city, photo, price, featured, reviews } = tour;
@@ -13,7 +14,7 @@ const TourCard = ({ tour }) => {
     <div className="tour__card">
       <Card>
         <div className="tour__img">
-          <img src={photo} alt="tour-img" />
+          <img src={photo} alt="tour-img" className="specialImage" />
           {featured && <span>Featured</span>}
         </div>
 
@@ -43,7 +44,11 @@ const TourCard = ({ tour }) => {
             </h5>
 
             <button className="btn booking__btn" style={{ background: "none" }}>
-              <Link to={`/tours/${_id}`} style={{ textDecoration: "none" }} className="font-medium">
+              <Link
+                to={`/tours/${_id}`}
+                style={{ textDecoration: "none" }}
+                className="font-medium"
+              >
                 Book Now
               </Link>
             </button>
@@ -53,5 +58,5 @@ const TourCard = ({ tour }) => {
     </div>
   );
 };
-// 49
+
 export default TourCard;

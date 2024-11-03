@@ -32,6 +32,11 @@ import himanshu4 from "../images/himanshu-4.png";
 
 // dheeraj
 import dheeraj from "../images/dheeraj.png";
+import dheeraj1 from "../images/dheeraj-1.png";
+import dheeraj2 from "../images/dheeraj-2.png";
+import dheeraj3 from "../images/dheeraj-3.png";
+import dheeraj4 from "../images/dheeraj-4.png";
+
 export const assets = {
   logo,
   chats_icon,
@@ -61,12 +66,11 @@ export const doctors = [
     _id: "dheeraj",
     name: "Dheeraj Sharma",
     image: dheeraj,
-    images: [rahul1, rahul2, rahul, rahul3, rahul4],
-    speciality: "Chaukori",
-    degree: "MBBS",
-    experience: "3 Years",
+    images: [dheeraj, dheeraj1, dheeraj2, dheeraj3, dheeraj4],
+    speciality: "Hamirpur",
+    address: "/tours/67277cc121f2711b73439b2e",
     about:
-      "<p>Welcome to an Enchanting Journey! Discover the serene beauty and tranquility of Chaukori, a hidden gem in the Kumaon region of Uttarakhand. This charming village is an ideal destination for those seeking a peaceful escape amidst the majestic Himalayas.<h5>Mountains in Chaukori: Nature’s Splendor</h5><p>Chaukori is surrounded by dense forests and sprawling tea gardens at an altitude of 2,010 meters. It offers breathtaking views of the Himalayan peaks, including the stunning Nanda Devi and Panchachuli ranges. This peaceful village is perfect for stargazing and birdwatching, making it a haven for nature enthusiasts.<p>The sight of the sun casting a golden glow over the snow-capped mountains at sunrise is magical, inviting visitors to embrace the serene environment and immerse themselves in nature.<h5>Nearby Attractions: Exploring the Charm</h5><p>While in Chaukori, explore the surrounding areas for stunning views that create a dramatic backdrop, making it a photographer’s paradise. Adventurous souls can embark on trekking routes through lush forests and picturesque landscapes.<p>Visit the local tea gardens to learn about tea cultivation and enjoy fresh brews with panoramic views. The nearby temple of Purnagiri, situated on a hilltop, offers a spiritual retreat with serene ambiance and stunning vistas.<h5>Plan Your Visit</h5><p>Ready for a rejuvenating retreat in Chaukori? We’ll help you plan your journey with tailored recommendations for accommodations, travel tips, and guided tours. Experience the best this tranquil destination has to offer, whether you seek adventure, relaxation, or a blend of both. Chaukori promises an unforgettable getaway.",
+      "<p>Welcome to an Enchanting Journey! Discover the serene beauty and tranquility of Garib Das Mandir, Sunset Point Pathliar, and Barchetu Fort, hidden gems in the breathtaking landscapes of Himachal Pradesh. Each destination offers a unique escape for those seeking peace, adventure, and spirituality amidst the stunning Himalayan backdrop.</p><h5>Garib Das Mandir: A Sacred Retreat</h5><p>Garib Das Mandir invites visitors to experience a peaceful spiritual ambiance surrounded by lush greenery and the calm beauty of Himachal’s hills. Dedicated to Saint Garib Das, this tranquil temple offers a haven for meditation and reflection, perfect for those seeking inner peace and connection with nature.</p><h5>Sunset Point, Pathliar: Evening’s Golden Glow</h5><p>Sunset Point in Pathliar is a nature lover’s paradise, where evenings come alive with vibrant hues as the sun sets over the mountains. This scenic viewpoint offers a memorable experience for photographers and anyone captivated by the beauty of dusk. Witness the sky transform as the sun dips behind the hills, creating a magical moment.</p><h5>Barchetu Fort: A Journey Through Time</h5><p>Barchetu Fort stands as a historical marvel with ancient walls and panoramic views that evoke a sense of the past. Perched on a hilltop, this fort is ideal for adventure seekers and history enthusiasts. Explore its architecture, imagine the stories of bygone days, and enjoy sweeping views of Himachal’s landscapes.</p><h5>Plan Your Visit</h5><p>Ready to explore these enchanting sites in Himachal Pradesh? Let us guide you with personalized recommendations for accommodations, travel tips, and local insights. Whether you’re drawn to the peaceful Garib Das Mandir, the scenic Sunset Point, or the historic Barchetu Fort, Himachal promises an enriching getaway. Embrace the beauty and tranquility of these hidden gems for an unforgettable experience.</p>",
   },
   {
     _id: "himanshu",
@@ -81,8 +85,6 @@ export const doctors = [
       himanshu3,
       himanshu4,
     ],
-    degree: "MBBS",
-    experience: "4 Years",
     address: "/tours/6724f1e41a60e8cddb7f1b0d",
 
     about:

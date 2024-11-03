@@ -16,7 +16,6 @@ const TourDetails = () => {
   const [tourRating, setTourRating] = useState(null);
   const { user } = useContext(AuthContext);
 
-  // this is an static data later we will call our API and load our data from database
   const { data: tour, loading, error } = useFetch(`${BASE_URL}/tours/${id}`);
 
   // destructure properties from tour object
@@ -119,7 +118,8 @@ const TourDetails = () => {
                         /per person
                       </span>
                       <span>
-                        <i className="ri-map-pin-time-line"></i>{distance} k/m around
+                        <i className="ri-map-pin-time-line"></i>
+                        {distance} k/m around
                       </span>
                       <span>
                         <i className="ri-group-line"></i>
@@ -180,10 +180,9 @@ const TourDetails = () => {
                               <div>
                                 <h5>{review.username}</h5>
                                 <p>
-                                  {new Date(review.createdAt).toLocaleDateString(
-                                    "en-US",
-                                    options
-                                  )}
+                                  {new Date(
+                                    review.createdAt
+                                  ).toLocaleDateString("en-US", options)}
                                 </p>
                               </div>
 

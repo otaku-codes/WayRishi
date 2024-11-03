@@ -6,6 +6,7 @@ import galleryImg05 from "../../assets/images/gallery-12.png";
 import galleryImg08 from "../../assets/images/himanshu.png";
 import galleryImg06 from "../../assets/images/anish-1.jpg";
 import galleryImg10 from "../../assets/images/rahul-1.png";
+import galleryImg11 from "../../assets/images/dheeraj-1.png";
 
 
 
@@ -17,7 +18,7 @@ const galleryImages = [
   galleryImg02,
   galleryImg10,
   galleryImg04,
-  galleryImg05,
+  galleryImg11,
 ];
 
 export default galleryImages;

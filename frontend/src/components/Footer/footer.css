@@ -178,14 +178,7 @@ button:focus {
 .f_size_18 {
   font-size: 18px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #4b505e;
-}
+
 .new_footer_top .f_widget.about-widget .f_list li a {
   color: #6a7695;
 }
@@ -256,5 +249,13 @@ h6 {
 /*************footer End*****************/
 
 .specail {
-  z-index: 9999999;
+  z-index: 999;
+}
+
+@media (max-width: 767px) {
+  .footer__quick-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

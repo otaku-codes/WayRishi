@@ -20,7 +20,7 @@ export const createBooking = async (req, res) => {
 
     const objectId = savedBooking._id;
     const id = objectId.toString();
-    // Define email parameters
+
     const mailOptions = {
       from: "himanshupapola.ph@gmail.com",
       to: `realtrickswizard@gmail.com, ${savedBooking.userEmail}`,
