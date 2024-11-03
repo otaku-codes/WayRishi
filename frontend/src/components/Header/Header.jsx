@@ -45,17 +45,22 @@ const Header = () => {
 
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
+  const handleClick = () => {
+    navigate("/");
+  };
   return (
     <header className="header" ref={headerRef}>
       <Container>
         <Row>
           <div className="nav__wrapper d-flex align-item-center justify-content-between">
             {/*=========================Logo================*/}
-            <Link to="/">
-              <div className="logo">
-                <img src={logo} alt="Logo" />
-              </div>
-            </Link>
+            <div
+              className="logo"
+              onClick={handleClick}
+              style={{ cursor: "pointer" }}
+            >
+              <img src={logo} alt="" />
+            </div>
             {/*=========================Logo================*/}
 
             {/*=========================Menu Start================*/}
