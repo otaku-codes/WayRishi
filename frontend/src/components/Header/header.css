@@ -109,3 +109,8 @@
     width: 100%;
   }
 }
+@media (max-width: 480px) {
+  .userNames {
+    display: none;
+  }
+}
