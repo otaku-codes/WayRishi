@@ -36,7 +36,9 @@ export const login = async (req, res) => {
     res
       .cookie("accessToken", token, {
         httpOnly: true,
-        maxAge: 15 * 24 * 60 * 60 * 1000,
+        secure: true,          // Ensures cookie is sent only over HTTPS
+        sameSite: "None",       // Allows cross-site requests
+        maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
       })
       .status(200)
       .json({
@@ -46,31 +48,7 @@ export const login = async (req, res) => {
         role,
       });
   } catch (err) {
-    console.error("Login error:", err); // Added error logging
+    console.error("Login error:", err);
     res.status(500).json({ success: false, message: "Failed to login" });
-  }
-};
-
-// User registration
-export const register = async (req, res) => {
-  const salt = bcrypt.genSaltSync(10);
-  const hash = bcrypt.hashSync(req.body.password, salt);
-
-  try {
-    const newUser = new User({
-      username: req.body.username,
-      email: req.body.email,
-      password: hash,
-      photo: req.body.photo,
-    });
-
-    await newUser.save();
-
-    res.status(201).json({ success: true, message: "Successfully created" }); // Changed status code to 201
-  } catch (err) {
-    console.error("Registration error:", err); // Added error logging
-    res
-      .status(500)
-      .json({ success: false, message: "Failed to create. Try again" });
   }
 };
