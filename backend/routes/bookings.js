@@ -9,7 +9,7 @@ import { verifyUser } from "../utils/verifyToken.js";
 const router = express.Router();
 
 // Route to create a booking
-router.post("/", createBooking);
+router.post("/", verifyUser, createBooking);
 
 // Route to get a single booking by ID
 router.get("/:id", verifyUser, getBooking);
