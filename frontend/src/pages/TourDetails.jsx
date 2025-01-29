@@ -128,7 +128,7 @@ const TourDetails = () => {
                     </div>
 
                     <h5>Description</h5>
-                    <p>{desc}</p>
+                    <p dangerouslySetInnerHTML={{ __html: desc }}></p>
                   </div>
 
                   {/* Tour Review Section Start*/}
