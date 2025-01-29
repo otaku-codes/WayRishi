@@ -76,10 +76,10 @@ export const doctors = [
     _id: "himanshu",
     name: "Himanshu Papola",
     image:
-      "https://media.licdn.com/dms/image/v2/C5603AQGLO3ItCGo_rQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1595780147580?e=1735776000&v=beta&t=f3ycLwXjlYD8DxtLWdhzdi4ACHLeOIMOsKINRncUbNE",
+      "https://lokeshshah.wordpress.com/wp-content/uploads/2014/11/nainitalnov2014_326.jpg?w=800",
     speciality: "Kausani, Chaukori",
     images: [
-      "https://media.licdn.com/dms/image/v2/C5603AQGLO3ItCGo_rQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1595780147580?e=1735776000&v=beta&t=f3ycLwXjlYD8DxtLWdhzdi4ACHLeOIMOsKINRncUbNE",
+      "https://lokeshshah.wordpress.com/wp-content/uploads/2014/11/nainitalnov2014_326.jpg?w=800",
       himanshu,
       himanshu1,
       himanshu3,
